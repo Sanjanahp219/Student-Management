@@ -1,0 +1,147 @@
+/* Global Color Palette */
+:root {
+  --bg-main: #F7F8F6;
+  --bg-sidebar: #172B3A;
+  --primary: #168A83;
+  --primary-hover: #11706B;
+  --text-main: #24313A;
+  --text-muted: #71808A;
+  --card-bg: #FFFFFF;
+  --border-color: #E2E7E5;
+  --success: #2E8B68;
+  --warning: #D89B32;
+  --danger: #C95C5C;
+}
+
+/* Apply background to the whole app */
+body {
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  margin: 0;
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+/* Sleek, modern Navbar using your custom colors */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 24px;
+  background: var(--card-bg);
+  border-bottom: 1px solid var(--border-color);
+  box-shadow: 0 4px 12px rgba(36, 49, 58, 0.03); /* Soft shadow matching text color */
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+ 
+}
+
+.navbar-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--bg-sidebar); /* Using the deep navy for titles looks great */
+  letter-spacing: -0.3px;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+   width: 100%;
+  justify-content: flex-end;
+}
+
+/* Beautiful modern search bar */
+.search-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-icon {
+  position: absolute;
+  left: 12px;
+  color: var(--text-muted);
+}
+
+.search-input {
+  padding: 10px 10px 10px 38px;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  font-size: 14px;
+  width: 250px;
+  transition: all 0.2s ease;
+  outline: none;
+}
+
+.search-input::placeholder {
+  color: var(--text-muted);
+}
+
+.search-input:focus {
+  background-color: var(--card-bg);
+  border-color: var(--primary);
+  /* Uses your teal color for the glow effect */
+  box-shadow: 0 0 0 3px rgba(22, 138, 131, 0.15); 
+}
+
+/* Smooth Icon Buttons */
+.icon-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+}
+
+.icon-btn:hover {
+  background-color: var(--bg-main);
+  color: var(--primary);
+}
+
+/* Premium User Profile Pill */
+.user-profile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 16px 6px 6px;
+  background: var(--bg-main);
+  border-radius: 50px;
+  border: 1px solid var(--border-color);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.user-profile:hover {
+  background: var(--border-color);
+}
+
+.avatar {
+  background: var(--primary); /* Teal accent */
+  color: var(--card-bg);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.username {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-main);
+}

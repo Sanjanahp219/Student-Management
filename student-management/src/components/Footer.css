@@ -1,0 +1,25 @@
+.footer {
+  min-height: 60px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 30px;
+
+  border-top: 1px solid #e2e7e5;
+
+  background-color: #ffffff;
+
+  color: #71808a;
+
+  font-size: 12px;
+}
+
+.footer p {
+  margin: 0;
+}
+
+.footer span {
+  color: #8a989f;
+}
