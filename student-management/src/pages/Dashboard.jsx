@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Users, BookOpen, UserCheck } from "lucide-react";
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from "recharts";
 import "./Dashboard.css";
 
 export default function Dashboard() {
@@ -10,6 +11,15 @@ export default function Dashboard() {
     courses: 12,
     departments: 6
   });
+
+  const chartData = [
+    { month: 'Jan', total: 150, active: 120 },
+    { month: 'Feb', total: 180, active: 160 },
+    { month: 'Mar', total: 200, active: 180 },
+    { month: 'Apr', total: 220, active: 200 },
+    { month: 'May', total: 240, active: 215 },
+    { month: 'Jun', total: 248, active: 221 },
+  ];
 
   return (
     <div className="dashboard-container">
@@ -57,9 +67,29 @@ export default function Dashboard() {
         {/* Chart Section */}
         <div className="chart-card">
           <h3>Student Statistics</h3>
-          <div className="chart-placeholder">
-            <span style={{ fontSize: "40px" }}>📊</span>
-            <p>Chart Area</p>
+          <div className="chart-container" style={{ width: '100%', height: '300px', marginTop: '20px' }}>
+            <ResponsiveContainer width="100%" height="100%">
+              <BarChart
+                data={chartData}
+                margin={{
+                  top: 10,
+                  right: 10,
+                  left: -20,
+                  bottom: 0,
+                }}
+              >
+                <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#eee" />
+                <XAxis dataKey="month" axisLine={false} tickLine={false} tick={{fill: '#6b7280', fontSize: 14}} tickMargin={10} />
+                <YAxis axisLine={false} tickLine={false} tick={{fill: '#6b7280', fontSize: 14}} />
+                <Tooltip 
+                  cursor={{fill: 'rgba(0,0,0,0.04)'}} 
+                  contentStyle={{borderRadius: '8px', border: 'none', boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)'}} 
+                />
+                <Legend iconType="circle" wrapperStyle={{paddingTop: '20px'}} />
+                <Bar dataKey="total" fill="#4f46e5" name="Total Students" radius={[4, 4, 0, 0]} barSize={24} />
+                <Bar dataKey="active" fill="#10b981" name="Active Students" radius={[4, 4, 0, 0]} barSize={24} />
+              </BarChart>
+            </ResponsiveContainer>
           </div>
         </div>
 

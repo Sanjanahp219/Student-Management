@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { GraduationCap, LayoutDashboard, Users, ChevronRight,ChevronDown,BookOpen, Building2,FileText,PieChart,Settings, HelpCircle,MoreVertical, Menu} from "lucide-react";
 import "./Sidebar.css";
 
@@ -29,10 +30,10 @@ export default function Sidebar() {
                 <div className="sidebar-section">
                     <h3 className="section-title">MAIN</h3>
                     <nav className="sidebar-nav">
-                        <a href="#" className="nav-item">
+                        <Link to="/" className="nav-item">
                             <LayoutDashboard size={18} />
                             <span>Dashboard</span>
-                        </a>
+                        </Link>
                         
                         {/* Students Dropdown */}
                         <div className="nav-group">
@@ -50,8 +51,8 @@ export default function Sidebar() {
                             {/* Render these links only if isStudentsOpen is true */}
                             {isStudentsOpen && (
                                 <div className="sub-menu">
-                                    <a href="#" className="sub-item">All Students</a>
-                                    <a href="#" className="sub-item">Add Student</a>
+                                    <Link to="/students" className="sub-item">All Students</Link>
+                                    <Link to="/add-student" className="sub-item">Add Student</Link>
                                 </div>
                             )}
                         </div>
