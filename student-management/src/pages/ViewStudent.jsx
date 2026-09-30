@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import './AddStudent.css';
 
-const EditStudent = () =>{
+const ViewStudent = () =>{
     const [formData, setFormData] = useState({
         studentId:'',
         fullName:'',
@@ -79,8 +79,8 @@ const EditStudent = () =>{
     return (
     <div className="add-student-page">
       <div className="page-header">
-        <h1>Edit Student</h1>
-        <p>Update existing student record.</p>
+        <h1>View Student</h1>
+        <p>Viewing student profile details.</p>
       </div>
 
       <div className="form-card">
@@ -225,4 +225,4 @@ const EditStudent = () =>{
   );
 };
 
-export default EditStudent;
+export default ViewStudent;

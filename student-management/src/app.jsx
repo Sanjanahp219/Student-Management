@@ -8,6 +8,9 @@ import Footer from './components/Footer.jsx'
 import Dashboard from './pages/Dashboard.jsx'
 import Students from './pages/Students.jsx'
 import AddStudent from './pages/AddStudent.jsx'
+import EditStudent from './pages/EditStudent.jsx'
+import ViewStudent from './pages/ViewStudent.jsx'
+import Departments from './pages/Departments.jsx'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
 
@@ -24,6 +27,9 @@ export function App() {
           <Route path="/" element={<Dashboard />} />
           <Route path="/students" element={<Students />} />
           <Route path="/add-student" element={<AddStudent />} />
+          <Route path="/edit-student/:id" element={<EditStudent />} />
+          <Route path="/student/:id" element={<ViewStudent />} />
+          <Route path="/departments" element={<Departments />} />
         </Routes>
       </main>
       {/* <Footer/> */}

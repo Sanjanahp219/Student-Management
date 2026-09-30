@@ -67,10 +67,10 @@ export default function Sidebar() {
                             <BookOpen size={18} />
                             <span>Courses</span>
                         </a>
-                        <a href="#" className="nav-item">
+                        <Link to="/departments" className="nav-item">
                             <Building2 size={18} />
                             <span>Departments</span>
-                        </a>
+                        </Link>
                     </nav>
                 </div>
 

@@ -1,8 +1,9 @@
 import React from 'react';
-import { MoreVertical } from 'lucide-react';
+import {  MoreVertical, Trash2, Edit, Eye  } from 'lucide-react';
 import './StudentTable.css';
+import { Link } from 'react-router-dom';
 
-export default function StudentTable({ students }) {
+export default function StudentTable({ students, onDelete, onEdit, onView }) {
   return (
     <div className="table-container">
       <table className="student-table">
@@ -15,6 +16,9 @@ export default function StudentTable({ students }) {
             <th>Course</th>
             <th>Status</th>
             <th>Action</th>
+            <th>View</th>
+            <th>Edit</th>
+            <th>Remove</th>
           </tr>
         </thead>
         <tbody>
@@ -39,7 +43,29 @@ export default function StudentTable({ students }) {
                 <button className="action-btn">
                   <MoreVertical size={18} />
                 </button>
+               
               </td>
+
+              <td>
+                <button className="action-btn view" onClick={() => onView(student)}>
+                 <Eye size={18} color="blue" />
+                </button>
+             </td>
+
+             <td>
+                <button className="action-btn edit" onClick={() => onEdit(student)}>
+                  <Edit size={18} color="green" />
+                </button>
+              </td>
+
+              <td>
+                 <button className="action-btn" onClick={()=>
+                  onDelete(student.id)}>
+                  <Trash2 size={18} color="red"/>
+                </button>
+              </td>
+
+
             </tr>
           ))}
         </tbody>
